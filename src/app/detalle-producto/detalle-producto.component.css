@@ -1,0 +1,31 @@
+.divPrincipal{
+    margin-top: 30px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divImg{
+    margin-left: 200px;
+    height: 400px;
+    width: auto;
+    border-width: 2px;
+    border-color: #F57F17 ;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.divCaracteristicas{
+    margin-right: 200px;
+    margin-left: auto;
+    height: 400px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #F57F17 ;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.caracteristicas{
+    margin: 10px;
+}

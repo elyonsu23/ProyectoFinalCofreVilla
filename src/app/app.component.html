@@ -1,0 +1,52 @@
+
+  <mat-toolbar class="nav-container">
+
+    <span class="elementos-nav" routerLinkActive="active" routerLink="inicio"><img class="imgLogo" src="../assets/Productos/Imagenes inicio/logo hoopshop.png" alt=""></span>
+    
+    <span class="elementos-nav" routerLinkActive="active" routerLink="inicio">Inicio</span>
+  
+    <span class="elementos-nav" routerLinkActive="active" routerLink="productos">Productos</span>
+
+    <span class="elementos-nav" routerLinkActive="active" routerLink="contacto">Contacto</span>
+    
+    <span class="elementos-nav" routerLinkActive="active" routerLink="nosotros">Sobre Nosotros</span>
+
+    <span class="nav-spacer"></span>
+
+    <mat-slide-toggle [(ngModel)]="tema" (ngModelChange)="onTemaChange()"></mat-slide-toggle>
+
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="favorito">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="carrito">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" >
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+
+
+  <!-- <div [ngClass]="{'dark-mode': darkMode}">
+    Contenido de tu aplicacion
+    <button mat-raised-button [color]="myCustomColor">Tercer color</button>
+  </div> -->
+
+
+  <div class="container">
+    <footer class="py-3 my-4 ">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" routerLink="inicio">Inicio</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" routerLink="productos">Productos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" routerLink="contacto">Contactos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" routerLink="nosotros">Sobre nosotros</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">&copy; 2023 HoopShop</p>
+    </footer>
+  </div>
+  

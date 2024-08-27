@@ -1,0 +1,27 @@
+<div class="divForm">
+  <form class="form" [formGroup]="formUser">
+  
+    <mat-form-field >
+      <mat-label>Nombre</mat-label>
+      <input type="text" matInput formControlName="nombre" placeholder="Ingrese su nombre">
+      <mat-error *ngIf="nombre.hasError('required')">El nombre es obligatorio</mat-error>
+      <mat-error *ngIf="nombre.hasError('minlength')">Se requiere un minimo de 3 caracteres</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field >
+      <mat-label>Email</mat-label>
+      <textarea matInput type="email" formControlName="email" placeholder="Ingrese su email"></textarea>
+      <mat-error *ngIf="email.hasError('required')">El mail es obligatorio</mat-error>
+      <mat-error *ngIf="email.hasError('email')">El mail debe ser valido</mat-error>
+    </mat-form-field> 
+  
+    <mat-form-field >
+      <mat-label>Mensaje</mat-label>
+      <textarea matInput type="textarea" formControlName="mensaje" placeholder="Ingrese un mensaje"></textarea>
+      <mat-error *ngIf="mensaje.hasError('required')">El mensaje es obligatorio</mat-error>
+    </mat-form-field> 
+  
+    <button mat-raised-button color="warn" (click)="enviarForm()" class="boton">Enviar</button>
+    
+  </form>
+</div>

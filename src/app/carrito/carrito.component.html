@@ -1,0 +1,52 @@
+<div *ngIf="!this.productosService.vistaCarrito">
+  <h3 class="vistaCarrito">No hay productos en el carrito</h3>
+</div>
+
+<div *ngIf="this.productosService.vistaCarrito">
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z4 tabla">
+
+    <ng-container matColumnDef="Nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let producto"> {{producto.nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Imagen">
+      <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
+      <mat-cell *matCellDef="let producto"> <img [src]="producto.imagen" class="img"> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Precio">
+      <mat-header-cell *matHeaderCellDef> Precio unitario </mat-header-cell>
+      <mat-cell *matCellDef="let producto"> {{producto.precio}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Cantidad">
+      <mat-header-cell *matHeaderCellDef> Cantidad </mat-header-cell>
+      <mat-cell *matCellDef="let producto">
+        <input type="number" min="1" max="99" [(ngModel)]="producto.cantidad" (change)="actualizarTotal(producto)"
+          class="inputNumber">
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Subtotal">
+      <mat-header-cell *matHeaderCellDef> Subtotal </mat-header-cell>
+      <mat-cell *matCellDef="let producto"> {{producto.cantidad*producto.precio}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Eliminar">
+      <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
+      <mat-cell *matCellDef="let producto">
+        <button (click)="getEliminarItem(producto)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <p class="precio">{{productosService.total}}</p>
+
+</div>

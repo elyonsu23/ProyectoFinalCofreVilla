@@ -1,0 +1,40 @@
+<div class="divCard">
+  
+    <mat-card *ngFor="let producto of productosService.productosFavoritos"  class="contenedor-card">
+      
+       <mat-card-header class="header-card">
+        <mat-card-title> {{producto.nombre}}</mat-card-title>
+        <mat-card-subtitle>Categoria: {{producto.categoria}}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-divider></mat-divider>
+  
+      <img mat-card-image class="img-card" [src]="producto.imagen" [routerLink]="['/productos', producto.id]">
+  
+      <mat-divider></mat-divider>
+  
+      <mat-card-content class="contenido-card">
+        <p>
+          ${{producto.precio}}
+        </p>
+      </mat-card-content>
+  
+      <mat-divider></mat-divider>
+  
+      <mat-card-actions class="botones-card">
+        <!-- input para cantidad de items al carrito -->
+        <input type="number" min="1" max="99" [(ngModel)]="producto.cantidad" class="inputNumber">
+        <!-- boton agregar al carrito -->
+        <button mat-flat-button color="warn" (click)="getElementosCarrito(producto)" class="botones">Agregar al
+          carrito</button>
+  
+        <!-- <button mat-flat-button color="warn" class="botones">Ver más</button> -->
+  
+        <!-- boton favorito -->
+        <button mat-mini-fab color="warn" class="boton-favorito" (click)="AgregarFavorito(producto)">
+          <mat-icon [ngClass]="{'rojo':producto.favorito}">favorite</mat-icon>
+        </button>
+      </mat-card-actions>
+  
+    </mat-card>  
+  

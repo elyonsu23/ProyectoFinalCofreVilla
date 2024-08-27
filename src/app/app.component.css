@@ -1,0 +1,23 @@
+
+.nav-container{
+  background-color: #FB8C00;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+
+.elementos-nav{
+  margin-left:20px;
+}
+
+.elementos-nav:hover{
+  cursor: pointer;
+}
+
+.imgLogo{
+  height: 70px;
+  width: 70px;
+}
+

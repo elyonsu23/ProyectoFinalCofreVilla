@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+@include mat.core();
+// Define las paletas de colores para el tema claro
+$claroPrimario: mat.define-palette(mat.$deep-orange-palette, 500);
+$claroSecundario: mat.define-palette(mat.$red-palette, 500);
+$claroTerciario: mat.define-palette(mat.$yellow-palette, 900);
+// Degine las paletas de colores para el tema claro
+$oscuroPrimario: mat.define-palette(mat.$deep-orange-palette, 500);
+$oscuroSecundario: mat.define-palette(mat.$grey-palette, 900);
+$oscuroTerciario: mat.define-palette(mat.$yellow-palette, 900);
+
+// Define los temasmat.
+$tema-claro: mat.define-light-theme((
+ color: (
+   primary: $claroPrimario,
+   accent: $claroSecundario,
+   warn: $claroTerciario,
+ ),
+));
+$tema-oscuro: mat.define-dark-theme((
+ color: (
+   primary: $oscuroPrimario,
+   accent: $oscuroSecundario,
+   warn: $oscuroTerciario,
+ ),
+));
+
+// Incluye los temas en tu aplicacion
+@include mat.all-component-themes($tema-claro);
+
+// .dark-mode{
+//   @include mat.all-component-themes($tema-oscuro);
+// }
+
+.dark-mode{
+  @include mat.all-component-colors($tema-oscuro);
+  }

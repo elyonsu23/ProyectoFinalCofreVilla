@@ -1,0 +1,81 @@
+
+.divPrincipal{
+  display: flex;
+}
+
+.divFiltros{
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 150px;
+}
+
+.divCard{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+  .contenedor-card {
+    height:600px ;
+    width: 350px;
+    margin-left: 15px;
+    margin-right:15px;
+    margin-bottom:30px ;
+    border-width: 1px;
+    border-color: #F44336 ;
+    border-style: solid;  
+  }
+
+  .contenedor-card:hover{
+    border-width: 2px;
+  }
+
+
+  .contenedor-card .dark-mode{
+    border-color: #F44336 
+  }
+
+  .header-card{
+    height: 150px;
+  }
+
+  .img-card{
+    height: 350px;
+  }
+
+  .img-card:hover{
+  cursor: pointer;
+  }
+
+  .contenido-card{
+    height: 150px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .botones-card{
+    height: 70px;
+  }
+
+  .botones{
+    margin-left: 5px;
+  }
+
+  .boton-favorito{
+    margin-left: auto;
+    color: black;
+  }
+
+  mat-grid-tile {
+    background: rgb(255, 255, 255);
+  }
+
+  .rojo{
+    color: red;
+  }
+
+  .inputNumber{
+    width: 40px;
+  }

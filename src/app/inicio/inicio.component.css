@@ -1,0 +1,20 @@
+.contenedorSecciones{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloSecciones{
+    text-align: center;
+}
+
+.secciones{
+    margin: 15px;
+    height: 200px;
+    padding: 0px;
+    border-width: 1px;
+    border-color: #F57F17 ;
+    border-style: solid;
+}
+
